@@ -116,7 +116,7 @@ console.log("Hello World!"[6]);
 
 
 
-//
+// Comparing Strings
 
 console.log("a" < "b");
 
@@ -126,14 +126,43 @@ console.log("Hey" === "Hey"); // true
 console.log("Hey" === "hey"); // false
 
 let password = "Password123$"; // on the db
-let userPassword = prompt("Enter your password")
+// let userPassword = prompt("Enter your password")
 
-if (password === userPassword) {
-    console.log("Welcome");
-} else {
-    console.log("Wrong password!");
-}
+// if (password === userPassword) {
+//     console.log("Welcome");
+// } else {
+//     console.log("Wrong password!");
+// }
 
 
 console.log("Hey" < "hey");
 
+
+const frost =
+`Nature’s first green is gold,
+Her hardest hue to hold.
+Her early leaf’s a flower;
+But only so an hour.
+Then leaf subsides to leaf.
+So Eden sank to grief,
+So dawn goes down to day.
+Nothing gold can stay.`;
+
+console.log(frost);
+
+const msg = "\tNature’s first green is gold,\nHer hardest hue to hold.\nHer early leaf’s a flower;"
+console.log(msg);
+
+
+// Template Literals
+let user2 = "Max Pain";
+console.log(`Welcome ${user2}: ${3 + 3}: ${30 > 1}`);
+
+let user3 = "Tom"
+
+
+const a = 5;
+const b = 10;
+
+console.log(`'a' is assigned a value of "${a}," and 'b' is assigned a value of "${b}."
+Therefore, 'a' plus 'b' is equal to ${a + b}.`);
