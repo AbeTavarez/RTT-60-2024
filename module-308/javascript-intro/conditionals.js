@@ -149,3 +149,79 @@ if (userAge <= 13) {
 }
 
 console.log("end of script");
+
+
+// ====== Switch Statement ===========
+
+let statusCode = 201;
+
+switch (statusCode) {
+    case 200:
+        console.log("Request was successful");
+        break;
+    case 201:
+        console.log("Success and created");
+        break;
+    case 404:
+        console.log("No found!");
+        break;
+    case 500:
+        console.log("Server Error!");
+        break
+    default:
+        console.log("Invalid Status Code");
+}
+
+
+// ======= Ternary Op ============
+let isAuthenticated = false;
+
+let authorized = isAuthenticated ? "Granted" : "Denied";
+
+console.log(authorized);
+
+// ======= if else ============
+let auth;
+
+if (isAuthenticated) {
+    auth = "Granted"
+} else {
+    auth = "Denied"
+}
+
+
+
+// Throw Keyword
+
+let amount = 10;
+
+if (amount < 0) {
+	console.log("Negative!");
+} else {
+    console.log("inside the else");
+    
+	// throw "Error - I don't know what I'm doing.";
+}
+
+
+
+
+let orderAmount = 100;
+
+try {
+    // any errors will be pass to the catch block
+    if (orderAmount < 0) {
+        console.log("Try Again!");
+    } else {
+        throw "Error with payment" // <----
+    }
+    
+} catch (error) {
+    // access the error in the "error" variable
+    console.log(error); // <--- 
+
+    alert(`Amount ${orderAmount} not valid`)
+}
+
+
+console.log("Does this log?");
