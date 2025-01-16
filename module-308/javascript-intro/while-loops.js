@@ -116,3 +116,49 @@ for (let i = 1; i <= 20; i++) {
     }
 }
 
+// Romeo went to the vending machine to buy himself a cookie, which costs $4. He paid with a $10 bill, and the vending machine gave him his change in quarters.
+
+// Write a loop that outputs how many quarters Romeo received.
+
+let change = 10 - 4; // 6
+let quarters = 0;
+
+while (change >= 0.25) {
+    console.log(`Change is ${change}`);
+    console.log(`Quarters ${quarters}`);
+    change -= 0.25;
+    quarters++; // count the quarters
+    
+}
+
+console.log(quarters);
+
+
+// Do While Loop
+
+let z = 10;
+
+do {
+	z--;
+	console.log(z);10
+} while (z > 50);
+
+// ===================================
+
+let num;
+
+do {
+    console.log("Welcome to my number game!");
+
+    // if (num && num <= 10 || num >= 20) {
+    //     console.log(`Number is to be number greater than 10 and less than 20`);
+    // }
+    
+    num = parseInt(prompt("Enter a number greater than 10 and less than 20"));
+
+    console.log(`You enter: ${num}`);
+    
+} while (num <= 10 || num >= 20);
+
+
+
