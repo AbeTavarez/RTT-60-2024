@@ -78,7 +78,7 @@ const CourseInfo = {
   
   function getLearnerData(course, ag, submissions) {
     // here, we would process this data to achieve the desired result.
-    
+
   }
   
   const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
