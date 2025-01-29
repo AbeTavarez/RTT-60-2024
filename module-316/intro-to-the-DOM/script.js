@@ -1,15 +1,9 @@
 console.log(document.body);
 
-
-
 const pTag = document.getElementById("intro")
 
 console.log(pTag)
-
-
 console.dir(document.body.children[1].innerText);
-
-
 console.log(document.scripts)
 
 
