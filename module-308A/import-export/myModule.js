@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // alert("hello")
 })
@@ -11,10 +14,13 @@ function multiply(n1, n2) {
 const result = multiply(2,5)
 console.log(result);
 
-export const nums = [1,2,3,4,5];
+const nums = [1,2,3,4,5];
 
 
-export function greeting() {
+function greeting() {
     console.log("Hello");
     
 }
+
+
+export {greeting, multiply, nums};
