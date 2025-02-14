@@ -24,10 +24,14 @@ const API_KEY = "";
 async function initialLoad() {
   try {
     // send request to cat api
-    const res = await fetch("https://api.thecatapi.com/v1/breeds");
+    const res = await fetch("https://api.thecatapi.com/v1/breeds", {
+        headers: {
+            'x-api-key': API_KEY
+        }
+    });
     // get the data from the response 
     const breeds = await res.json();
-    
+
     console.log(breeds);
   } catch (e) {
     console.error(e);
