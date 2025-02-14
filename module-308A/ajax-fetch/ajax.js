@@ -46,8 +46,26 @@ function testRequest() {
     }
 
     request.onreadystatechange = alertResponse;
-    request.open("GET", "test.xml");
-    request.send();
+    // request.open("GET", "https://jsonplaceholder.typicode.com/users");
+    request.open("POST", "https://jsonplaceholder.typicode.com/todos");
+    
+    // set request headers
+    request.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+    );
+    
+    // get the value of the input
+    let inputVal = document.getElementById("myInput").value;
+
+    // encodes string to a URI encoded string
+    let encodedVal = encodeURIComponent(inputVal);
+    console.log(encodedVal);
+    
+    // send encoded data to the server
+    request.send(`data=${encodedVal}`);
+
+    // request.send();
 
     } catch(e) {
         console.error(e);
@@ -56,20 +74,25 @@ function testRequest() {
 
  function alertResponse() {
     if (request.readyState === XMLHttpRequest.DONE) {
-        if (request.status === 200) {
+        console.log('STATUS CODE: ', request.status);
+        if (request.status === 200 || request.status === 201) {
             // alert(request.responseText);
-
-            const xmlDoc = request.responseXML;
-            console.log(xmlDoc);
-            
-            const doc_root = xmlDoc.querySelector("root");
-            console.log(doc_root);
-            
-            let data = doc_root.firstChild.data;
+            console.log("Response Data: ", request.responseText);
+            const data = JSON.parse(request.responseText);
             console.log(data);
             
 
-            alert(data);
+            // const xmlDoc = request.responseXML;
+            // console.log(xmlDoc);
+            
+            // const doc_root = xmlDoc.querySelector("root");
+            // console.log(doc_root);
+            
+            // let data = doc_root.firstChild.data;
+            // console.log(data);
+            
+
+            // alert(data);
         } else {
             alert("The request returned a status other than 200 OK: " + request.status);
         }
