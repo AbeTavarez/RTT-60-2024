@@ -3,9 +3,12 @@ import HomePage from './components/HomePage'
 import Payload from './components/Payload'
 
 function App() {
+  
+  let openPortal = true;
+  
   return (
     <>
-      <Payload />
+      {openPortal && <Payload />}
       <HomePage />
     </>
   )
