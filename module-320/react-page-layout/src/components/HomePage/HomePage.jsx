@@ -1,8 +1,9 @@
-import Learner from "./Learner";
+import Learner from "../Learner";
+import "./HomePage.css";
 
 function HomePage() {
     return (
-        <main>
+        <main className="some-class">
             <h1>Home Page</h1>
 
             <Learner />
