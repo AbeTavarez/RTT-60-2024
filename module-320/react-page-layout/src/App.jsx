@@ -1,12 +1,12 @@
-
 import './App.css'
+import HomePage from './components/HomePage'
+import Payload from './components/Payload'
 
 function App() {
-
-
   return (
     <>
-      <h1 className='header'>Hello</h1>
+      <Payload />
+      <HomePage />
     </>
   )
 }
