@@ -12,9 +12,10 @@ function App() {
 
       <div>
         {
-          products.map(item => (
-            <Product {...item} key={item.id}/>
-          ))
+          products.map(item => {
+            return <Product {...item} key={item.id}/>
+          }
+          )
         }
       </div>
 
