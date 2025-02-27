@@ -6,11 +6,13 @@ import learnerData from "./data/learners";
 import {useState} from 'react';
 import ShowCount from "./components/ShowCount";
 
+import Container from "./components/Container";
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <Container>
       <h1>Fashion Blog</h1>
 
       <ShowCount count={count}/>
@@ -21,15 +23,13 @@ function App() {
         return (
           <Learner
             key={index}
-            name={item.name}
-            age={item.age}
-            lastLogin={item.lastLogin}
-            style={{backgroundColor: 'black', color: "#fff"}}
+            {...item}
+            style={{backgroundColor: "black", color: "#fff"}}
             setCount={setCount}
           />
         );
       })}
-    </div>
+    </Container>
   );
 }
 
