@@ -1,7 +1,10 @@
+import logo from '../assets/react.svg'
+
 function Header() {
   return (
     <header>
       <div>
+        <img src={logo} alt="" />
         <h1>Store</h1>
       </div>
       <nav>

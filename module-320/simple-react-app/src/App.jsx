@@ -1,8 +1,9 @@
-import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Product from "./components/Product";
 import products from "./data/products";
+
+// images
 
 function App() {
   return (
@@ -11,12 +12,9 @@ function App() {
       <h1>Products</h1>
 
       <div>
-        {
-          products.map(item => {
-            return <Product {...item} key={item.id}/>
-          }
-          )
-        }
+        {products.map((item) => {
+          return <Product {...item} key={item.id} />;
+        })}
       </div>
 
       <Footer />
