@@ -4,7 +4,9 @@ function Counter() {
     const [counter, setCounter] = useState(0);
 
     const handleClick = () => {
-        setCounter(counter + 1)
+        setCounter((counter ) => counter + 1) // 0 + 1
+        setCounter((counter) => counter + 1) // 1 + 1
+        setCounter((counter) =>counter + 1) // 2 + 1
     }
 
     return (
