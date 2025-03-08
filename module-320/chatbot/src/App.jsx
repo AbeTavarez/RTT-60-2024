@@ -36,25 +36,30 @@ function App() {
 
   return (
     <main className="flex bg-indigo-900 text-white h-screen">
-      <section className="flex-1 border p-5">
-        <h1>Chatbot</h1>
+
+      {/* CHATS SECTION  */}
+      <section className="flex-1 border p-5 bg-neutral-800">
+        <h1 className="text-center text-xl font-bold">Chatbot</h1>
       </section>
 
-      <section className="flex-3 border p-5">
-        <div className="flex flex-col justify-between">
-          <div>
+
+      <section className="flex flex-col flex-3 border p-5 bg-neutral-900">
+        <h2 className="mb-5 text-center text-xl font-bold">Chat</h2>
+        <div className="">
+          <div className="">
             {messages.map((message, idx) => {
               return (
                 <div key={idx} className="flex items-center mb-5">
-                  {message.role === "user" ? <CiUser size={24}/> : <LuBot size={24}/>}
+                  {message.role === "user" ? <CiUser size={32} className="border rounded-full p-1"/> : <LuBot size={32} className="border rounded-full p-1"/>}
                   <div className="ml-2">{message.content}</div>
                 </div>
               );
             })}
           </div>
         </div>
-
-        <form onSubmit={handleSubmit} className="flex justify-between w-full">
+ 
+        
+        <form onSubmit={handleSubmit} className="flex justify-between w-full mt-auto">
           <input
             type="text"
             className="border w-full p-1"
