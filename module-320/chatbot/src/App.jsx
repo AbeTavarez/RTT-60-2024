@@ -64,7 +64,7 @@ function App() {
         </div>
         {/* PREVIOUS CHATS */}
         <div>
-          <p className="border p-1 border rounded-md">
+          <p className="p-1 border rounded-md">
           Previous Chats will go here...
           </p>
         </div>
