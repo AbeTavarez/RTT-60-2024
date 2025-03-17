@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { healthRouter } from './routes/health.js';
 
 dotenv.config();
 // console.log(process.env.MONGODB_URI);
@@ -31,6 +32,9 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.render("index");
 })
+
+// API Routes
+app.use('/api/health', healthRouter);
 
 
 
