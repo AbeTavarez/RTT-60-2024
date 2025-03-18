@@ -51,7 +51,8 @@ router.post("/", async (req, res) => {
       newDocument.learner_id = newDocument.student_id;
       delete newDocument.student_id;
     }
-  
+    console.log(newDocument);
+    
     let result = await collection.insertOne(newDocument);
     res.send(result).status(204);
   });
