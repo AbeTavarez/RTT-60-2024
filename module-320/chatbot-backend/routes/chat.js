@@ -1,7 +1,7 @@
 import express from "express";
 import Chat from "../models/Chat.js";
 
-const chatRouter = express.Router();
+export const chatRouter = express.Router();
 
 /**
  * GET /api/chat return all chats
@@ -59,7 +59,7 @@ chatRouter.delete("/:id", async (req, res) => {
       return res.status(404).send("Chat not found");
     }
 
-    res.status(204).send("Chat deleted successfully");
+    res.send("Chat deleted successfully");
   } catch (error) {
     console.error(error);
     res.status(500).send(error.message);
@@ -97,4 +97,4 @@ chatRouter.patch("/:id", async (req, res) => {
         console.error(error);
         res.status(500).send(error.message);
     }
-})
+});

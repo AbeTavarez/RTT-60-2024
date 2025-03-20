@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 
 // Routers
 import { healthRouter } from "./routes/health.js";
+import { chatRouter } from "./routes/chat.js";
 
 dotenv.config();
 // console.log(process.env.MONGODB_URI);
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/api/health", healthRouter);
+app.use("/api/chat", chatRouter);
 
 // Global error handling
 app.use((err, req, res, next) => {
