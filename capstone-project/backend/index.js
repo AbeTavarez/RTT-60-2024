@@ -7,13 +7,16 @@ import mongoose from "mongoose";
 
 // Routers
 import { healthRouter } from "./routes/health.js";
+import userRouter from "./routes/user.js";
+import coffeeRouter from "./routes/coffee.js";
 
 dotenv.config();
 // console.log(process.env.MONGODB_URI);
 
 // Connect to MongoDB
+// https://mongoosejs.com/docs/guide.html#indexes
 await mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI, { autoIndex: false })
   .then(() => console.log("Connected to MongoDB"))
   .catch((e) => console.error(e));
 
@@ -40,6 +43,8 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/api/health", healthRouter);
+app.use("/api/user", userRouter);
+app.use("/api/coffee", coffeeRouter);
 
 // Global error handling
 app.use((err, req, res, next) => {
